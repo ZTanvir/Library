@@ -2,17 +2,17 @@
 let myLibrary = [];
 
 // Book information
-function Book(title, author, pages, read) {
+function Book(title, author, pages, status) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.status = status;
 }
 
-function addBookToLibrary(bookTitle, bookAuthor, bookPages, bookRead) {
-    // Create book based on information
+function addBookToLibrary(bookTitle, bookAuthor, bookPages, status) {
+    // Create book based on Book information
     function makeObject() {
-        return new Book(bookTitle, bookAuthor, bookPages, bookRead);
+        return new Book(bookTitle, bookAuthor, bookPages, status);
     }
     // Add book to library
     myLibrary.push(makeObject());
