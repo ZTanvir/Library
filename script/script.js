@@ -63,7 +63,7 @@ for (let item of myLibrary) {
 }
 
 const btnEl = document.querySelector(".add-new-book");
-function showTable(e) {
-    tableEl.classList.toggle("hide-table");
+function showForm(e) {
+    bookFormEl.classList.toggle("hide-form");
 }
-btnEl.addEventListener("click", showTable);
+btnEl.addEventListener("click", showForm);
