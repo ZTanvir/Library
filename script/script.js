@@ -67,3 +67,25 @@ function showForm(e) {
     bookFormEl.classList.toggle("hide-form");
 }
 btnEl.addEventListener("click", showForm);
+// Select form elements
+let bookFormEl = document.querySelector(".book-form");
+let submitBtn = document.querySelector(".submit-book-info");
+let bNameEl = document.querySelector("#bname");
+let bauthorEl = document.querySelector("#bauthor");
+let bpagesEl = document.querySelector("#bpages");
+let radioBtnEl = document.querySelectorAll("input[name]");
+// Get data from form
+function getFormData(e) {
+    let bookRead;
+    for (let radio of radioBtnEl) {
+        if (radio.checked) {
+            bookRead = radio.value;
+            break;
+        }
+    }
+    console.log(bNameEl.value);
+    console.log(bauthorEl.value);
+    console.log(bpagesEl.value);
+    console.log(bookRead);
+}
+submitBtn.addEventListener("click", getFormData);
