@@ -8,9 +8,6 @@ table {
     letter-spacing: 1px;
     font-size: 0.8rem;
 }
-.hide-form {
-    display: none;
-}
 
 td,
 th {
@@ -32,4 +29,11 @@ tr:nth-child(even) td {
 
 tr:nth-child(odd) td {
     background-color: rgb(245, 245, 245);
+}
+/* Form hidden */
+.book-form {
+    display: none;
+}
+.hide-form {
+    display: block;
 }
