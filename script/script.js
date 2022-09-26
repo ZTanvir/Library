@@ -17,9 +17,10 @@ function addBookToLibrary(bookTitle, bookAuthor, bookPages, status) {
     // Add book to library
     myLibrary.push(makeObject());
 }
-addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 208, true);
-addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, false);
-addBookToLibrary("Moby Dick", "Herman Melville", 635, true);
+
+// addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 208, true);
+// addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, false);
+// addBookToLibrary("Moby Dick", "Herman Melville", 635, true);
 
 // Select table element
 const tableEl = document.querySelector(".book-information");
@@ -28,40 +29,37 @@ console.log(tableEl);
 // create table head and body
 const tblHead = document.createElement("thead");
 const tblBody = document.createElement("tbody");
+// Table head content
+let tableHeadContent = ["Title", "Author", "Pages", "Status"];
 // insert item in table head
-for (let item of myLibrary) {
-    let headRow = document.createElement("thead");
-    console.log("key");
-    for (let key in item) {
-        let colTbl = document.createElement("th");
-        let text = document.createTextNode(
-            `${key[0].toUpperCase()}${key.slice(1)}` //Make the first letter uppercase
-        );
-        colTbl.appendChild(text);
-        headRow.appendChild(colTbl);
-        console.log(key);
-    }
+let headRow = document.createElement("thead");
+for (let item of tableHeadContent) {
+    let colTbl = document.createElement("th");
+    let text = document.createTextNode(item);
+    colTbl.appendChild(text);
+    headRow.appendChild(colTbl);
     // Add table head to table
     tableEl.appendChild(headRow);
-    break;
 }
 
-// Insert item to table body
-for (let item of myLibrary) {
-    let rowTbl = document.createElement("tr");
-    console.log("Values:");
-    for (let key in item) {
-        let colTbl = document.createElement("td");
-        let text = document.createTextNode(`${item[key]}`);
-        colTbl.appendChild(text);
-        rowTbl.appendChild(colTbl);
-        console.log(item[key]);
+function addTableData() {
+    // Insert item to table body
+    for (let item of myLibrary) {
+        let rowTbl = document.createElement("tr");
+        console.log("Values:");
+        for (let key in item) {
+            let colTbl = document.createElement("td");
+            let text = document.createTextNode(`${item[key]}`);
+            colTbl.appendChild(text);
+            rowTbl.appendChild(colTbl);
+            console.log(item[key]);
+        }
+        tblBody.appendChild(rowTbl);
+        // Add table body to table
+        tableEl.appendChild(tblBody);
+        myLibrary = [];
     }
-    tblBody.appendChild(rowTbl);
-    // Add table body to table
-    tableEl.appendChild(tblBody);
 }
-
 const btnEl = document.querySelector(".add-new-book");
 function showForm(e) {
     bookFormEl.classList.toggle("hide-form");
@@ -87,5 +85,16 @@ function getFormData(e) {
     console.log(bauthorEl.value);
     console.log(bpagesEl.value);
     console.log(bookRead);
+    let bookTitle = bNameEl.value;
+    let bookAuthor = bauthorEl.value;
+    let bookPages = bpagesEl.value;
+    let status = bookRead;
+    // Create Book based on form data
+    addBookToLibrary(bookTitle, bookAuthor, bookPages, status);
+    // Add Book information to table body
+    addTableData();
 }
 submitBtn.addEventListener("click", getFormData);
+// addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 208, true);
+// addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, false);
+// addBookToLibrary("Moby Dick", "Herman Melville", 635, true);
