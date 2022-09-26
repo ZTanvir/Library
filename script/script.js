@@ -61,3 +61,9 @@ for (let item of myLibrary) {
     // Add table body to table
     tableEl.appendChild(tblBody);
 }
+
+const btnEl = document.querySelector(".add-new-book");
+function showTable(e) {
+    tableEl.classList.toggle("hide-table");
+}
+btnEl.addEventListener("click", showTable);
