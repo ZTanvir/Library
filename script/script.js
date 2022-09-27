@@ -41,6 +41,10 @@ for (let item of tableHeadContent) {
     // Add table head to table
     tableEl.appendChild(headRow);
 }
+function deleteBtnFun(e) {
+    e.target.parentNode.parentNode.remove();
+    console.log("Table row removed");
+}
 // add rowValue to table row
 let rowValue = 0;
 function addTableData() {
@@ -81,6 +85,7 @@ function addTableData() {
         btn.appendChild(btnText);
         createTableCol.appendChild(btn);
         rowTbl.appendChild(createTableCol);
+        btn.addEventListener("click", deleteBtnFun);
 
         // Add row to table body
         tblBody.appendChild(rowTbl);
