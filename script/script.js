@@ -41,11 +41,15 @@ for (let item of tableHeadContent) {
     // Add table head to table
     tableEl.appendChild(headRow);
 }
-
+// add rowValue to table row
+let rowValue = 0;
 function addTableData() {
     // Insert item to table body
     for (let item of myLibrary) {
         let rowTbl = document.createElement("tr");
+        // Add attribute to table row
+        rowTbl.setAttribute("data-row", rowValue);
+        rowValue++;
         console.log("Table Values:");
         for (let key in item) {
             let colTbl = document.createElement("td");
