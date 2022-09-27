@@ -30,7 +30,7 @@ console.log(tableEl);
 const tblHead = document.createElement("thead");
 const tblBody = document.createElement("tbody");
 // Table head content
-let tableHeadContent = ["Title", "Author", "Pages", "Status", ""];
+let tableHeadContent = ["Title", "Author", "Pages", "Read Status", ""];
 // insert item in table head
 let headRow = document.createElement("thead");
 for (let item of tableHeadContent) {
