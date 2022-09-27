@@ -30,7 +30,7 @@ console.log(tableEl);
 const tblHead = document.createElement("thead");
 const tblBody = document.createElement("tbody");
 // Table head content
-let tableHeadContent = ["Title", "Author", "Pages", "Status"];
+let tableHeadContent = ["Title", "Author", "Pages", "Status", ""];
 // insert item in table head
 let headRow = document.createElement("thead");
 for (let item of tableHeadContent) {
@@ -46,11 +46,26 @@ function addTableData() {
     // Insert item to table body
     for (let item of myLibrary) {
         let rowTbl = document.createElement("tr");
-        console.log("Values:");
+        console.log("Table Values:");
         for (let key in item) {
             let colTbl = document.createElement("td");
-            let text = document.createTextNode(`${item[key]}`);
-            colTbl.appendChild(text);
+            // Show read status based on Book status
+            if (key == "status") {
+                let btn = document.createElement("button");
+                // When status value Yes
+                if (item[key] == "Yes") {
+                    let text = document.createTextNode(`Yes`);
+                    btn.appendChild(text);
+                } // When status value No
+                else if (item[key] == "No") {
+                    let text = document.createTextNode(`No`);
+                    btn.appendChild(text);
+                }
+                colTbl.appendChild(btn);
+            } else {
+                let text = document.createTextNode(`${item[key]}`);
+                colTbl.appendChild(text);
+            }
             rowTbl.appendChild(colTbl);
             console.log(item[key]);
         }
@@ -81,6 +96,7 @@ function getFormData(e) {
             break;
         }
     }
+    console.log("User Inputs:");
     console.log(bNameEl.value);
     console.log(bauthorEl.value);
     console.log(bpagesEl.value);
