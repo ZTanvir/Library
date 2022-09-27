@@ -73,6 +73,16 @@ function addTableData() {
             rowTbl.appendChild(colTbl);
             console.log(item[key]);
         }
+        // Add delete btn to table row
+        let createTableCol = document.createElement("td");
+        let btn = document.createElement("button");
+        let btnText = document.createTextNode("Delete");
+        btn.classList.add("delete-btn");
+        btn.appendChild(btnText);
+        createTableCol.appendChild(btn);
+        rowTbl.appendChild(createTableCol);
+
+        // Add row to table body
         tblBody.appendChild(rowTbl);
         // Add table body to table
         tableEl.appendChild(tblBody);
