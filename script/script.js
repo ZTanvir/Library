@@ -41,9 +41,20 @@ for (let item of tableHeadContent) {
   // Add table head to table
   tableEl.appendChild(headRow);
 }
+// Remove row from table when delete btn clicked
 function deleteBtnFun(e) {
   e.target.parentNode.parentNode.remove();
   console.log("Table row removed");
+}
+// Change read status from yes/no based on btn clicked
+function changeReadStatus(e) {
+  //
+  let msg = e.target.innerText;
+  if (msg == "Yes") {
+    e.target.innerText = "No";
+  } else if (msg == "No") {
+    e.target.innerText = "Yes";
+  }
 }
 // add rowValue to table row
 let rowValue = 0;
@@ -69,6 +80,7 @@ function addTableData() {
           let text = document.createTextNode(`No`);
           statusBtn.appendChild(text);
         }
+        statusBtn.addEventListener("click", changeReadStatus);
         colTbl.appendChild(statusBtn);
       } else {
         let text = document.createTextNode(`${item[key]}`);
