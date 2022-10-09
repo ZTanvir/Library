@@ -140,6 +140,13 @@ function getFormData(e) {
   addBookToLibrary(bookTitle, bookAuthor, bookPages, status);
   // Add Book information to table body
   addTableData();
+  // Remove form data
+  bNameEl.value = "";
+  bauthorEl.value = "";
+  bpagesEl.value = "";
+  for (let radio of radioBtnEl) {
+    radio.checked = false;
+  }
 }
 submitBtn.addEventListener("click", getFormData);
 // addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 208, true);
