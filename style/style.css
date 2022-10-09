@@ -1,7 +1,21 @@
 html {
   font-family: sans-serif;
 }
-
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/* Table style */
 table {
   border-collapse: collapse;
   border: 2px solid rgb(200, 200, 200);
@@ -36,4 +50,19 @@ tr:nth-child(odd) td {
 }
 .hide-form {
   display: block;
+}
+/*  */
+h1 {
+  color: #0099d5;
+}
+body {
+  background-color: #1e2227;
+}
+img {
+  width: 20px;
+}
+footer {
+  margin-top: 20px;
+  font-size: 21px;
+  color: white;
 }

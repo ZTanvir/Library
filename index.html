@@ -6,35 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Style for library -->
     <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/favicon/icons8-books-96.png"
+      type="image/x-icon"
+    />
     <title>Library</title>
   </head>
 
   <body>
-    <div><button class="add-new-book">Add New Book</button></div>
-    <div class="book-form">
-      <!-- Book Name -->
-      <label for="bname">Book Name:</label><br />
-      <input type="text" id="bname" placeholder="Title" /><br /><br />
-      <!-- Book Author -->
-      <label for="bauthor">Book Author:</label><br />
-      <input type="text" id="bauthor" placeholder="Author" /><br /><br />
-      <!-- Book Pages -->
-      <label for="bpages">Book Pages:</label><br />
-      <input
-        type="number"
-        id="bpages"
-        min="1"
-        placeholder="Pages"
-      /><br /><br />
-      <!-- Read the book -->
-      <p>Read Yet:</p>
-      <input type="radio" name="readyet" value="Yes" id="yes" />
-      <label for="yes">Yes</label>
-      <input type="radio" name="readyet" value="No" id="no" />
-      <label for="no">No</label><br />
-      <button class="submit-book-info">Submit</button>
-    </div>
-    <table class="book-information"></table>
+    <header>
+      <h1>A Simple Library</h1>
+    </header>
+    <main>
+      <div><button class="add-new-book">Add New Book</button></div>
+      <div class="book-form">
+        <!-- Book Name -->
+        <label for="bname">Book Name:</label><br />
+        <input type="text" id="bname" placeholder="Title" /><br /><br />
+        <!-- Book Author -->
+        <label for="bauthor">Book Author:</label><br />
+        <input type="text" id="bauthor" placeholder="Author" /><br /><br />
+        <!-- Book Pages -->
+        <label for="bpages">Book Pages:</label><br />
+        <input
+          type="number"
+          id="bpages"
+          min="1"
+          placeholder="Pages"
+        /><br /><br />
+        <!-- Read the book -->
+        <p>Read Yet:</p>
+        <input type="radio" name="readyet" value="Yes" id="yes" />
+        <label for="yes">Yes</label>
+        <input type="radio" name="readyet" value="No" id="no" />
+        <label for="no">No</label><br />
+        <button class="submit-book-info">Submit</button>
+      </div>
+      <table class="book-information"></table>
+    </main>
+    <footer>
+      Copyright © 2022 Zahirul
+      <a href="https://github.com/ZTanvir" target="_blank"
+        ><img
+          class="github-logo"
+          src="./images/logo/GitHub-Mark-32px.png"
+          alt="github logo"
+      /></a>
+    </footer>
     <script src="./script/script.js"></script>
   </body>
 </html>
