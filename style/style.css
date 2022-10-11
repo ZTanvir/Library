@@ -112,6 +112,7 @@ input[type=text],input[type=number]{
 }
 .label-yes,.label-no{
   font-size: 24px;
+  margin-right: 20px;
 }
 .submit-book-info{
   margin: 16px 0px;
