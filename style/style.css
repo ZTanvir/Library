@@ -1,5 +1,5 @@
 /*
-  1. Use a more-intuitive box-sizing model.
+  Use a more-intuitive box-sizing model.
 */
 *,
 *::before,
@@ -7,14 +7,19 @@
   box-sizing: border-box;
 }
 /*
-    2. Remove default margin
-  */
+  Remove default margin
+*/
 * {
   margin: 0;
 }
 html{
   font-family: 'Open Sans', sans-serif;
 }
+body {
+  background-color: #1e2227;
+  min-height: 100vh;
+}
+
 /* Table style */
 table {
   min-width: 50vw;
@@ -46,6 +51,7 @@ tr:nth-child(even) td {
 tr:nth-child(odd) td {
   background-color: rgb(245, 245, 245);
 }
+
 /* Form hidden */
 .book-form {
   display: none;
@@ -53,17 +59,14 @@ tr:nth-child(odd) td {
 .hide-form {
   display: block;
 }
-/*  */
-body {
-  background-color: #1e2227;
-  min-height: 100vh;
-}
+
 h1 {
   color: #0099d5;
   text-align: center;
   font-size: 60px;
   padding: 16px;
 }
+/* Add new book btn */
 .add-new-book{
   margin: 16px;
   padding: 15px 30px;
@@ -72,7 +75,7 @@ h1 {
 .add-new-book:hover{
   cursor: pointer;
 }
-
+/* Book form */
 main {
   display: flex;
   flex-direction: column;
@@ -80,14 +83,15 @@ main {
   min-height: 75vh;
   min-width: 50vw;
 }
-img {
-  width: 15px;
-}
+
 footer {
   text-align: center;
   margin-top: 20px;
   font-size: 21px;
   color: white;
+}
+img {
+  width: 15px;
 }
 /* style form */
 .book-form{
@@ -97,6 +101,7 @@ h2{
   color: white;
   font-size: 28px;
   margin-bottom: 16px;
+  text-align: center;
 }
 label{
   color: white;
