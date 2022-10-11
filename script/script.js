@@ -1,7 +1,17 @@
-
-
-
-
+/* Select html element */
+// Select table element
+const tableEl = document.querySelector(".book-information");
+const tblHead = document.createElement("thead");
+const tblBody = document.createElement("tbody");
+// Selct add new button element
+const btnEl = document.querySelector(".add-new-book");
+// Select form elements
+const bookFormEl = document.querySelector(".book-form");
+const submitBtn = document.querySelector(".submit-book-info");
+const bNameEl = document.querySelector("#bname");
+const bauthorEl = document.querySelector("#bauthor");
+const bpagesEl = document.querySelector("#bpages");
+const radioBtnEl = document.querySelectorAll("input[name]");
 
 // Library
 let myLibrary = [];
@@ -23,19 +33,9 @@ function addBookToLibrary(bookTitle, bookAuthor, bookPages, status) {
   myLibrary.push(makeObject());
 }
 
-// addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 208, true);
-// addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, false);
-// addBookToLibrary("Moby Dick", "Herman Melville", 635, true);
-
-// Select table element
-const tableEl = document.querySelector(".book-information");
-console.log(tableEl);
-
-// create table head and body
-const tblHead = document.createElement("thead");
-const tblBody = document.createElement("tbody");
 // Table head content
 let tableHeadContent = ["Title", "Author", "Pages", "Read Status", ""];
+
 // insert item in table head
 let headRow = document.createElement("thead");
 for (let item of tableHeadContent) {
@@ -111,18 +111,11 @@ function addTableData() {
     myLibrary = [];
   }
 }
-const btnEl = document.querySelector(".add-new-book");
 function showForm(e) {
   bookFormEl.classList.toggle("hide-form");
 }
 btnEl.addEventListener("click", showForm);
-// Select form elements
-let bookFormEl = document.querySelector(".book-form");
-let submitBtn = document.querySelector(".submit-book-info");
-let bNameEl = document.querySelector("#bname");
-let bauthorEl = document.querySelector("#bauthor");
-let bpagesEl = document.querySelector("#bpages");
-let radioBtnEl = document.querySelectorAll("input[name]");
+
 // Get data from form
 function getFormData(e) {
   let bookRead;
@@ -132,11 +125,7 @@ function getFormData(e) {
       break;
     }
   }
-  console.log("User Inputs:");
-  console.log(bNameEl.value);
-  console.log(bauthorEl.value);
-  console.log(bpagesEl.value);
-  console.log(bookRead);
+
   let bookTitle = bNameEl.value;
   let bookAuthor = bauthorEl.value;
   let bookPages = bpagesEl.value;
@@ -145,6 +134,7 @@ function getFormData(e) {
   addBookToLibrary(bookTitle, bookAuthor, bookPages, status);
   // Add Book information to table body
   addTableData();
+
   // Remove form data
   bNameEl.value = "";
   bauthorEl.value = "";
@@ -154,6 +144,3 @@ function getFormData(e) {
   }
 }
 submitBtn.addEventListener("click", getFormData);
-// addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 208, true);
-// addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, false);
-// addBookToLibrary("Moby Dick", "Herman Melville", 635, true);
