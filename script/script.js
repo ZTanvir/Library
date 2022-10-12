@@ -1,10 +1,11 @@
-/* Select html element */
 // Select table element
 const tableEl = document.querySelector(".book-information");
 const tblHead = document.createElement("thead");
 const tblBody = document.createElement("tbody");
+
 // Selct add new button element
 const btnEl = document.querySelector(".add-new-book");
+
 // Select form elements
 const bookFormEl = document.querySelector(".book-form");
 const submitBtn = document.querySelector(".submit-book-info");
@@ -37,14 +38,13 @@ function addBookToLibrary(bookTitle, bookAuthor, bookPages, status) {
 let tableHeadContent = ["Title", "Author", "Pages", "Read Status", ""];
 
 // insert item in table head
-let headRow = document.createElement("thead");
 for (let item of tableHeadContent) {
   let colTbl = document.createElement("th");
   let text = document.createTextNode(item);
   colTbl.appendChild(text);
-  headRow.appendChild(colTbl);
+  tblHead.appendChild(colTbl);
   // Add table head to table
-  tableEl.appendChild(headRow);
+  tableEl.appendChild(tblHead);
 }
 // Remove row from table when delete btn clicked
 function deleteBtnFun(e) {
