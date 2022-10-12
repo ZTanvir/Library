@@ -34,11 +34,11 @@ function addBookToLibrary(bookTitle, bookAuthor, bookPages, status) {
   myLibrary.push(makeObject());
 }
 
-// Table head content
-let tableHeadContent = ["Title", "Author", "Pages", "Read Status", ""];
-
-// insert item in table head
+// insert items in table head
 (function insertTableHead() {
+  // Table head content
+  let tableHeadContent = ["Title", "Author", "Pages", "Read Status", ""];
+
   for (let item of tableHeadContent) {
     let colTbl = document.createElement("th");
     let text = document.createTextNode(item);
