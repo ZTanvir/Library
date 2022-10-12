@@ -38,14 +38,17 @@ function addBookToLibrary(bookTitle, bookAuthor, bookPages, status) {
 let tableHeadContent = ["Title", "Author", "Pages", "Read Status", ""];
 
 // insert item in table head
-for (let item of tableHeadContent) {
-  let colTbl = document.createElement("th");
-  let text = document.createTextNode(item);
-  colTbl.appendChild(text);
-  tblHead.appendChild(colTbl);
-  // Add table head to table
-  tableEl.appendChild(tblHead);
-}
+(function insertTableHead() {
+  for (let item of tableHeadContent) {
+    let colTbl = document.createElement("th");
+    let text = document.createTextNode(item);
+    colTbl.appendChild(text);
+    tblHead.appendChild(colTbl);
+    // Add table head to table
+    tableEl.appendChild(tblHead);
+  }
+})();
+
 // Remove row from table when delete btn clicked
 function deleteTableRow(e) {
   e.target.parentNode.parentNode.remove();
@@ -110,6 +113,8 @@ function addTableData() {
     myLibrary = [];
   }
 }
+
+// Fire when add new book button clicked
 function showForm(e) {
   bookFormEl.classList.toggle("hide-form");
 }
@@ -136,14 +141,17 @@ function readBook() {
   }
   return bookRead;
 }
+
 // Get data from form
 function getFormData(e) {
   let bookTitle = bNameEl.value;
   let bookAuthor = bauthorEl.value;
   let bookPages = bpagesEl.value;
-  let status = readBook();
+  let status = readBook(); // read book status - yes,no
+
   // Create Book based on form data
   addBookToLibrary(bookTitle, bookAuthor, bookPages, status);
+
   // Add Book information to table body
   addTableData();
 
