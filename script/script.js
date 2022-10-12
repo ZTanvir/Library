@@ -124,20 +124,24 @@ function removeFormData() {
     radio.checked = false;
   }
 }
-// Get data from form
-function getFormData(e) {
-  let bookRead;
+
+// read book status - yes,no
+function readBook() {
+  let bookRead = null;
   for (let radio of radioBtnEl) {
     if (radio.checked) {
       bookRead = radio.value;
       break;
     }
   }
-
+  return bookRead;
+}
+// Get data from form
+function getFormData(e) {
   let bookTitle = bNameEl.value;
   let bookAuthor = bauthorEl.value;
   let bookPages = bpagesEl.value;
-  let status = bookRead;
+  let status = readBook();
   // Create Book based on form data
   addBookToLibrary(bookTitle, bookAuthor, bookPages, status);
   // Add Book information to table body
