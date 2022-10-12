@@ -47,9 +47,8 @@ for (let item of tableHeadContent) {
   tableEl.appendChild(tblHead);
 }
 // Remove row from table when delete btn clicked
-function deleteBtnFun(e) {
+function deleteTableRow(e) {
   e.target.parentNode.parentNode.remove();
-  console.log("Table row removed");
 }
 // Change read status from yes/no based on btn clicked
 function changeReadStatus(e) {
@@ -102,7 +101,7 @@ function addTableData() {
     btn.appendChild(btnText);
     createTableCol.appendChild(btn);
     rowTbl.appendChild(createTableCol);
-    btn.addEventListener("click", deleteBtnFun);
+    btn.addEventListener("click", deleteTableRow);
 
     // Add row to table body
     tblBody.appendChild(rowTbl);
@@ -116,6 +115,15 @@ function showForm(e) {
 }
 btnEl.addEventListener("click", showForm);
 
+// Remove form data
+function removeFormData() {
+  bNameEl.value = "";
+  bauthorEl.value = "";
+  bpagesEl.value = "";
+  for (let radio of radioBtnEl) {
+    radio.checked = false;
+  }
+}
 // Get data from form
 function getFormData(e) {
   let bookRead;
@@ -136,11 +144,6 @@ function getFormData(e) {
   addTableData();
 
   // Remove form data
-  bNameEl.value = "";
-  bauthorEl.value = "";
-  bpagesEl.value = "";
-  for (let radio of radioBtnEl) {
-    radio.checked = false;
-  }
+  removeFormData();
 }
 submitBtn.addEventListener("click", getFormData);
