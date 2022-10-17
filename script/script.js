@@ -51,7 +51,14 @@ function addBookToLibrary(bookTitle, bookAuthor, bookPages, status) {
 
 // Remove row from table when delete btn clicked
 function deleteTableRow(e) {
-  console.log(myLibrary);
+  // Select delete btn html content
+  const buttonEl = e.target;
+  // Get data-row value
+  let tbodyIndex = Number(buttonEl.dataset.row);
+  // Remove that row form table body
+  myLibrary.splice(tbodyIndex, 1);
+  // Update table
+  addTableData();
 }
 // Change read status from yes/no based on btn clicked
 function changeReadStatus(e) {
@@ -73,17 +80,14 @@ function removeTableBody() {
 }
 
 // add rowValue to table row
-let rowValue = 0;
 function addTableData() {
   removeTableBody();
-  // Insert item to table body
+  let rowValue = 0;
 
+  // Insert item to table body
   for (let item of myLibrary) {
     let rowTbl = document.createElement("tr");
     // Add attribute to table row
-    rowTbl.setAttribute("data-row", rowValue);
-    rowValue++;
-    console.log("Table Values:");
     for (let key in item) {
       let colTbl = document.createElement("td");
       // Show read status based on Book status
@@ -105,13 +109,15 @@ function addTableData() {
         colTbl.appendChild(text);
       }
       rowTbl.appendChild(colTbl);
-      console.log(item[key]);
     }
     // Add delete btn to table row
     let createTableCol = document.createElement("td");
     let btn = document.createElement("button");
     let btnText = document.createTextNode("Delete");
     btn.classList.add("delete-btn");
+    // Match data-row value with array index number
+    btn.setAttribute("data-row", rowValue);
+    rowValue++;
     btn.appendChild(btnText);
     createTableCol.appendChild(btn);
     rowTbl.appendChild(createTableCol);
@@ -121,7 +127,6 @@ function addTableData() {
     tblBody.appendChild(rowTbl);
     // Add table body to table
     tableEl.appendChild(tblBody);
-    console.log(myLibrary);
   }
 }
 
