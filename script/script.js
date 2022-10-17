@@ -51,7 +51,7 @@ function addBookToLibrary(bookTitle, bookAuthor, bookPages, status) {
 
 // Remove row from table when delete btn clicked
 function deleteTableRow(e) {
-  e.target.parentNode.parentNode.remove();
+  console.log(myLibrary);
 }
 // Change read status from yes/no based on btn clicked
 function changeReadStatus(e) {
@@ -63,10 +63,21 @@ function changeReadStatus(e) {
     e.target.innerText = "Yes";
   }
 }
+// Remove table row form table body
+function removeTableBody() {
+  if (tblBody.hasChildNodes) {
+    while (tblBody.hasChildNodes()) {
+      tblBody.removeChild(tblBody.firstChild);
+    }
+  }
+}
+
 // add rowValue to table row
 let rowValue = 0;
 function addTableData() {
+  removeTableBody();
   // Insert item to table body
+
   for (let item of myLibrary) {
     let rowTbl = document.createElement("tr");
     // Add attribute to table row
@@ -110,7 +121,7 @@ function addTableData() {
     tblBody.appendChild(rowTbl);
     // Add table body to table
     tableEl.appendChild(tblBody);
-    myLibrary = [];
+    console.log(myLibrary);
   }
 }
 
