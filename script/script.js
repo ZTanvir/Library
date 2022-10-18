@@ -63,12 +63,14 @@ function deleteTableRow(e) {
 // Change read status from yes/no based on btn clicked
 function changeReadStatus(e) {
   //
-  let msg = e.target.innerText;
-  if (msg == "Yes") {
-    e.target.innerText = "No";
-  } else if (msg == "No") {
-    e.target.innerText = "Yes";
+  let readStatusBtn = e.target;
+  let itemInArray = Number(readStatusBtn.dataset.row);
+  if (myLibrary[itemInArray].status === "Yes") {
+    myLibrary[itemInArray]["status"] = "No";
+  } else if (myLibrary[itemInArray].status === "No") {
+    myLibrary[itemInArray]["status"] = "Yes";
   }
+  addTableData();
 }
 // Remove table row form table body
 function removeTableBody() {
@@ -93,6 +95,7 @@ function addTableData() {
       // Show read status based on Book status
       if (key == "status") {
         let statusBtn = document.createElement("button");
+        statusBtn.setAttribute("data-row", rowValue);
         // When status value Yes
         if (item[key] == "Yes") {
           let text = document.createTextNode(`Yes`);
