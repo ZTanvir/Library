@@ -176,5 +176,6 @@ function getFormData(e) {
 
   // Remove form data
   removeFormData();
+  showForm();
 }
 submitBtn.addEventListener("click", getFormData);
