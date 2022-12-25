@@ -18,12 +18,22 @@ const radioBtnEl = document.querySelectorAll("input[name]");
 let myLibrary = [];
 
 // Book information
-function Book(title, author, pages, status) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
+// function Book(title, author, pages, status) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.status = status;
+// }
+class Book {
+  constructor(title, author, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
 }
+
+
 
 function addBookToLibrary(bookTitle, bookAuthor, bookPages, status) {
   // Create book based on Book information
