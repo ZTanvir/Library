@@ -136,7 +136,24 @@ input[type="number"] {
 .submit-book-info:hover {
   cursor: pointer;
 }
+/* Form */
 :is(.book-name, .book-author, .book-pages) {
   display: flex;
   flex-direction: column;
+}
+input[type="text"],
+input[type="number"] {
+  appearance: none;
+  outline: none;
+}
+
+:is(input[type="text"]:invalid, input[type="number"]:invalid) {
+  border: 1px solid red;
+}
+:is(input[type="text"]:valid, input[type="number"]:valid) {
+  border: 1px solid green;
+}
+.page-error {
+  color: white;
+  opacity: 0.5;
 }

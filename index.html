@@ -26,20 +26,21 @@
       <form id="bookInfo">
         <!-- Book Name -->
         <div class="book-name">
-          <label for="bookName">Book name:</label>
+          <label for="bookName">Book name* (required):</label>
           <input type="text" name="bookName" id="bname" placeholder="Title" required/>
         </div>
         
         <!-- Book Author -->
         <div class="book-author">
-          <label for="bookName">Book author:</label>
+          <label for="bookName">Book author* (required):</label>
           <input type="text" id="bauthor" placeholder="Author" required/>
         </div>
         
         <!-- Book Pages -->
         <div class="book-pages">
-          <label for="bookName">Book pages:</label>
-          <input type="number" id="bpages" min="16" placeholder="Pages" minlength="16" required/>
+          <label for="bookName">Book pages* (required):</label>
+          <input type="number" id="bpages" min="16" placeholder="Pages" required/>
+          <span class="page-error"></span>
         </div>
 
         <!-- Read the book -->

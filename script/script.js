@@ -13,6 +13,7 @@ const submitBtn = document.querySelector(".submit-book-info");
 const bNameEl = document.querySelector("#bname");
 const bauthorEl = document.querySelector("#bauthor");
 const bpagesEl = document.querySelector("#bpages");
+const bpagesError = document.querySelector(".page-error");
 const radioBtnEl = document.querySelectorAll("input[name]");
 
 // Library
@@ -191,3 +192,13 @@ function getFormData(e) {
   showForm();
 }
 formEl.addEventListener("submit", getFormData);
+
+// Give message if the input book page ammount is less than 16
+
+bpagesEl.addEventListener("input",(e)=>{
+  if(bpagesEl.validity.valid){
+    bpagesError.textContent = "";
+  }else if (bpagesEl.validity.rangeUnderflow){
+    bpagesError.textContent = `Book page should be at least ${bpagesEl.min},you entered ${bpagesEl.value}`;
+  }
+})
