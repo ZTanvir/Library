@@ -26,26 +26,26 @@
       <form id="bookInfo">
         <!-- Book Name -->
         <div>
-          <input type="text" id="bname" placeholder="Title" />
+          <input type="text" id="bname" placeholder="Title" required/>
         </div>
         
         <!-- Book Author -->
         <div>
-          <input type="text" id="bauthor" placeholder="Author" />
+          <input type="text" id="bauthor" placeholder="Author" required/>
         </div>
         
         <!-- Book Pages -->
         <div>
-          <input type="number" id="bpages" min="1" placeholder="Pages" />
+          <input type="number" id="bpages" min="1" placeholder="Pages" required/>
         </div>
 
         <!-- Read the book -->
         <p class="read-yet">Read Yet:</p>
 
         <div>
-          <input type="radio" name="readyet" value="Yes" id="yes" />
+          <input type="radio" name="readyet" value="Yes" id="yes" required/>
           <label class="label-yes" for="yes">Yes</label>
-          <input type="radio" name="readyet" value="No" id="no" />
+          <input type="radio" name="readyet" value="No" id="no" required/>
           <label class="label-no" for="no">No</label>
         </div>
         <button type="submit" class="submit-book-info">Submit</button>
