@@ -25,18 +25,21 @@
       <h2>Adding/Editing a book</h2>
       <form id="bookInfo">
         <!-- Book Name -->
-        <div>
-          <input type="text" id="bname" placeholder="Title" required/>
+        <div class="book-name">
+          <label for="bookName">Book name:</label>
+          <input type="text" name="bookName" id="bname" placeholder="Title" required/>
         </div>
         
         <!-- Book Author -->
-        <div>
+        <div class="book-author">
+          <label for="bookName">Book author:</label>
           <input type="text" id="bauthor" placeholder="Author" required/>
         </div>
         
         <!-- Book Pages -->
-        <div>
-          <input type="number" id="bpages" min="1" placeholder="Pages" required/>
+        <div class="book-pages">
+          <label for="bookName">Book pages:</label>
+          <input type="number" id="bpages" min="16" placeholder="Pages" minlength="16" required/>
         </div>
 
         <!-- Read the book -->

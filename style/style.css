@@ -12,12 +12,14 @@
 * {
   margin: 0;
 }
-html{
-  font-family: 'Open Sans', sans-serif;
+html {
+  font-family: "Open Sans", sans-serif;
 }
 body {
-  background-color: #1e2227;
   min-height: 100vh;
+  background-color: #1e2227;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Table style */
@@ -37,7 +39,7 @@ th {
 
 th {
   color: white;
-  background-color:#272822;
+  background-color: #272822;
 }
 
 td {
@@ -67,12 +69,12 @@ h1 {
   padding: 16px;
 }
 /* Add new book btn */
-.add-new-book{
+.add-new-book {
   margin: 16px;
   padding: 15px 30px;
   font-size: 16px;
 }
-.add-new-book:hover{
+.add-new-book:hover {
   cursor: pointer;
 }
 /* Book form */
@@ -85,8 +87,9 @@ main {
 }
 
 footer {
+  margin-top: auto;
+  margin-bottom: 10px;
   text-align: center;
-  margin-top: 20px;
   font-size: 21px;
   color: white;
 }
@@ -94,40 +97,46 @@ img {
   width: 15px;
 }
 /* style form */
-.book-form{
+.book-form {
   padding: 20px;
 }
-h2{
+h2 {
   color: white;
   font-size: 28px;
   margin-bottom: 16px;
   text-align: center;
 }
-label{
+label {
   color: white;
   margin-top: 16px;
 }
-input[type=text],input[type=number]{
+input[type="text"],
+input[type="number"] {
   width: 50vw;
   font-size: 16px;
   padding: 10px 12px;
-  margin:5px 0px;
-  font-family: 'Open Sans', sans-serif;
+  margin: 5px 0px;
+  font-family: "Open Sans", sans-serif;
 }
-.read-yet{
+.read-yet {
   color: white;
   font-size: 24px;
   margin: 10px 0px;
 }
-.label-yes,.label-no{
+.label-yes,
+.label-no {
   font-size: 24px;
   margin-right: 20px;
 }
-.submit-book-info{
+.submit-book-info {
   margin: 16px 0px;
   padding: 10px 40px;
   font-size: 16px;
 }
-.submit-book-info:hover{
+.submit-book-info:hover {
   cursor: pointer;
+}
+:is(.book-name, .book-author, .book-pages) {
+  display: flex;
+  flex-direction: column;
 }
