@@ -23,19 +23,33 @@
     <div><button class="add-new-book">Add New Book</button></div>
     <div class="book-form">
       <h2>Adding/Editing a book</h2>
-      <!-- Book Name -->
-      <input type="text" id="bname" placeholder="Title" /><br /><br />
-      <!-- Book Author -->
-      <input type="text" id="bauthor" placeholder="Author" /><br /><br />
-      <!-- Book Pages -->
-      <input type="number" id="bpages" min="1" placeholder="Pages" /><br /><br />
-      <!-- Read the book -->
-      <p class="read-yet">Read Yet:</p>
-      <input type="radio" name="readyet" value="Yes" id="yes" />
-      <label class="label-yes" for="yes">Yes</label>
-      <input type="radio" name="readyet" value="No" id="no" />
-      <label class="label-no" for="no">No</label><br />
-      <button class="submit-book-info">Submit</button>
+      <form>
+        <!-- Book Name -->
+        <div>
+          <input type="text" id="bname" placeholder="Title" />
+        </div>
+        
+        <!-- Book Author -->
+        <div>
+          <input type="text" id="bauthor" placeholder="Author" />
+        </div>
+        
+        <!-- Book Pages -->
+        <div>
+          <input type="number" id="bpages" min="1" placeholder="Pages" />
+        </div>
+
+        <!-- Read the book -->
+        <p class="read-yet">Read Yet:</p>
+
+        <div>
+          <input type="radio" name="readyet" value="Yes" id="yes" />
+          <label class="label-yes" for="yes">Yes</label>
+          <input type="radio" name="readyet" value="No" id="no" />
+          <label class="label-no" for="no">No</label>
+        </div>
+        <button type="submit" class="submit-book-info">Submit</button>
+      </form>
     </div>
     <!-- Store bood information -->
     <table class="book-information"></table>
