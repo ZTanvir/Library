@@ -173,6 +173,7 @@ function readBook() {
 
 // Get data from form
 function getFormData(e) {
+  e.preventDefault();
   let bookTitle = bNameEl.value;
   let bookAuthor = bauthorEl.value;
   let bookPages = bpagesEl.value;
