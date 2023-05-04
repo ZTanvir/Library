@@ -7,6 +7,7 @@ const tblBody = document.createElement("tbody");
 const btnEl = document.querySelector(".add-new-book");
 
 // Select form elements
+const formEl = document.querySelector("#bookInfo");
 const bookFormEl = document.querySelector(".book-form");
 const submitBtn = document.querySelector(".submit-book-info");
 const bNameEl = document.querySelector("#bname");
@@ -189,4 +190,4 @@ function getFormData(e) {
   removeFormData();
   showForm();
 }
-submitBtn.addEventListener("click", getFormData);
+formEl.addEventListener("submit", getFormData);
